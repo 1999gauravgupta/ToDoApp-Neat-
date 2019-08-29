@@ -24,7 +24,7 @@ function toggle2(ref){
      var note=document.getElementsByClassName("note");
      for(let i=0;i<note.length;i++){
          if(note[i]==ref){
-             ref.style.color="#1989EA";
+             ref.style.color="#ec008c";
              document.getElementsByClassName("notesPane")[0].innerHTML=ref.innerHTML;
          }
          else{
@@ -39,7 +39,7 @@ function adder(){
         name="Diary";
     }
     place=document.getElementsByClassName("diariesPane")[0];
-    var html='<div class="diary" onclick="toggle(this)" data-toggle="0"><button>'+name+'</button></div>';
+    var html='<div class="diary" onclick="toggle(this)" data-toggle="0"><button><p>'+name+'</p></button></div>';
     place.innerHTML+=html;
     diaries.push([]);
 }
