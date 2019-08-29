@@ -1,17 +1,18 @@
-var diaries=[["aaaaaaaaaaaaa","bbbbbbbbbbbb"],["cccc"],["dddddddd","eeeeeeeeeeeeeeeeeeeeeeeee"]];
+var diaries=[];
 
-function toggle(){
+function toggle(ref){
     var diary = document.getElementsByClassName('diary');
     for(let i=0;i<diary.length;i++){          
-        if(diary[i]==this){
-            this.setAttribute("data-toggle","1");
+        if(diary[i]==ref){
+            ref.setAttribute("data-toggle","1");
             var notes=diaries[i];
             var area=document.getElementsByClassName("sectionsPane")[0];
-            var html='<div class="createNote"><button>Add Note&nbsp&nbsp<img src="plus.svg"></button></div>';
+            var bhtml='<div class="createNote"><button onclick="noter()">Add Note&nbsp&nbsp<img src="plus.svg"></button></div>';
+            var html="";
             for(let j=0;j<notes.length;j++){;
                 html+='<div><button class="note" onclick="toggle2(this)">'+notes[j]+'</button></div>';
             }
-            area.innerHTML=html;
+            area.innerHTML=bhtml+html;
         }
         else{
             diary[i].setAttribute("data-toggle","0");
@@ -24,7 +25,6 @@ function toggle2(ref){
      for(let i=0;i<note.length;i++){
          if(note[i]==ref){
              ref.style.color="#1989EA";
-            //  console.log(ref.innerHTML);
              document.getElementsByClassName("notesPane")[0].innerHTML=ref.innerHTML;
          }
          else{
@@ -33,7 +33,27 @@ function toggle2(ref){
      }
 }
 
-var diary = document.getElementsByClassName('diary');
-for(let i = 0;i<diary.length;i++){
-    diary[i].addEventListener('click',toggle);
-};
+function adder(){
+    var name = prompt("New diary Name:", "Diary");
+    if(name==null){
+        name="Diary";
+    }
+    place=document.getElementsByClassName("diariesPane")[0];
+    var html='<div class="diary" onclick="toggle(this)" data-toggle="0"><button>'+name+'</button></div>';
+    place.innerHTML+=html;
+    diaries.push([]);
+}
+
+function noter(){
+    var note = prompt("Note:", "Text");
+    if(note==null){
+        note="Text";
+    }
+    var diary = document.getElementsByClassName('diary');
+    for(let i=0;i<diary.length;i++){ 
+        if(diary[i].getAttribute("data-toggle")==1){
+            diaries[i].push(note);
+            toggle(diary[i]);
+        }
+    }
+}
