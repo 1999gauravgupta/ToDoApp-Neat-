@@ -1,0 +1,145 @@
+/* *:not(path):not(g) {    color:                    hsla(210, 100%, 100%, 0.9) !important;    background:               hsla(210, 100%,  50%, 0.5) !important;    outline:    solid 0.25rem hsla(210, 100%, 100%, 0.5) !important;
+    box-shadow: none !important;
+} */
+
+body{
+    font-family: 'Livvic', sans-serif;
+}
+
+.header{
+    height:10%;
+    width:100%;
+    background-color: #1989EA;
+    border-bottom: 1px solid black;
+}
+
+.header .logo{
+    height:100%;
+    width:10%;
+    float:left;
+    display : flex;
+    align-items : center;
+    justify-content: flex-start;
+}
+
+.header .logo img{
+    width:80%;
+    height: 80%;
+}
+
+.header .title{
+    width:80%;
+    height: 100%;
+    float: left;
+    display : flex;
+    align-items : center;
+    justify-content: center;
+}
+
+.header .title h1{
+   font-size: 200%;
+}
+
+.header .search{
+    height:100%;
+    width:10%;
+    float: right;
+    display : flex;
+    align-items : center;
+    justify-content: flex-end;
+}
+
+.header .search img{
+    width:80%;
+    height: 80%;
+    float:right;
+}
+
+.content{
+    height:90%;
+    width:100%;
+}
+
+.content .diariesPane{
+    width:15%;
+    height:100%;
+    background-color: #e3d8d8;
+    float: left;
+    border-right: 1px solid rgba(0,0,0,0.3)
+}
+
+.content div div{
+    width:100%;
+    height:10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content div div button{
+    width:100%;
+    height:100%;
+    /* background-color:#e3d8d8; */
+    border:0;
+    padding: 1rem 2rem;
+    cursor: pointer;
+    word-wrap: break-word;
+}
+
+.content div div button:focus {
+    outline: 0;
+}
+
+.content div div button img{
+    height:70%;
+}
+
+.content .diariesPane button{
+    background-color:#e3d8d8;
+}
+
+
+.content .diariesPane .createDiary button:hover{
+    background-color:#1989EA;
+    color:#e3d8d8;
+}
+
+[data-toggle="1"]{
+    color:#1989EA;
+}
+/* #f5f1f0; */
+.content .sectionsPane{
+    width:15%;
+    height:100%;
+    background-color: #f5f1f0;
+    float: left;
+    border-right: 1px solid rgba(0,0,0,0.3)
+}
+
+.content .sectionsPane button{
+    background-color:#f5f1f0;
+}
+
+.content .sectionsPane .createNote button:hover{
+    background-color:#1989EA;
+    color:#f5f1f0;
+}
+
+.content .notesPane{
+    background-color: white;
+    padding: 1em;
+    width:70%;
+    height:100%;
+    float: left;
+    font-size: 1.2em;
+}
+
+.content .notesPane div{
+    display:block;
+    width:100%;
+    height:100%;
+}
+.content .notesPane img{
+    width:100%;
+    height:50%;
+}
